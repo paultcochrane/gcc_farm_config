@@ -62,6 +62,7 @@ of this repository.  The list of branches is currently as follows:
     # - enter a space for SMTP server option (i.e. local sendmail is used)
     # - use nice 10
     # - use verbose level 2
+    # Remove the comment line in `smokecurrent.skiptests`
 
 ### clone the `gcc_farm_config` repo
 
