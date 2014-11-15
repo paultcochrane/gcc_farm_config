@@ -37,6 +37,7 @@ of this repository.  The list of branches is currently as follows:
 
     $ cd $HOME/p5smoke
     $ git clone git@github.com:paultcochrane/Test-Smoke.git
+    $ cd Test-Smoke
     # git 1.5.x
     $ git fetch origin ptc_master:ptc_master  # fetches relevant branch
     $ git co ptc_master
