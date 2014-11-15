@@ -5,6 +5,10 @@ of this repository.  The list of branches is currently as follows:
    * gcc12
 
 ## Smoke testing setup
+   * ensure that `ssh` is set up to connect to GitHub
+
+    $ ssh-keygen -t rsa -b 2048
+    # copy key to GitHub
 
    * clone the `dotfiles` repo and link the relevant files:
 
