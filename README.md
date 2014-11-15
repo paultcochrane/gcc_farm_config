@@ -46,7 +46,7 @@ of this repository.  The list of branches is currently as follows:
 
 ### install `Test::Smoke`
 
-    $ cd Test-Smoke
+    $ cd $HOME/p5smoke/Test-Smoke
     $ perl Makefile.PL
     $ make install   # will create a "smoke" dir in parent dir
 
