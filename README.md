@@ -54,7 +54,13 @@ of this repository.  The list of branches is currently as follows:
 
     $ cd $HOME/p5smoke/smoke
     $ perl configsmoke.pl
-    # follow prompts; use rsync as the syncer
+    # follow prompts
+    # - use blead branch
+    # - use rsync as the syncer
+    # - mail results to mailing list; ensure From field is entered
+    # - enter a space for SMTP server option (i.e. local sendmail is used)
+    # - use nice 10
+    # - use verbose level 2
 
 ### clone the `gcc_farm_config` repo
 
