@@ -79,3 +79,16 @@ of this repository.  The list of branches is currently as follows:
       done
     $ git ci -a -m "Adding configuration for gcc<nnn>"
     $ git push origin gcc<nnn>
+
+## Running the smoker by hand
+
+    $ ssh gcc<nnn>
+    $ screen -list
+    # if there is no screen process running
+    $ screen
+    # if there is a screen process running
+    $ screen -dr <process_id>
+    $ cd $HOME/p5smoke/smoke
+    $ $HOME/p5smoke/smoke/smokecurrent.sh
+    $ <Ctrl-A> c   # start a new screen window
+    $ tail -f $HOME/p5smoke/smoke/smokecurrent.log
