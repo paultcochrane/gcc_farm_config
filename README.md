@@ -59,6 +59,7 @@ of this repository.  The list of branches is currently as follows:
     # - use blead branch
     # - use rsync as the syncer
     # - mail results to mailing list; ensure From field is entered
+    # - CC to me on fail
     # - enter a space for SMTP server option (i.e. local sendmail is used)
     # - use nice 10
     # - use verbose level 2
