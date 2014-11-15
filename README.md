@@ -40,6 +40,8 @@ of this repository.  The list of branches is currently as follows:
     $ cd Test-Smoke
     # git 1.5.x
     $ git fetch origin ptc_master:ptc_master  # fetches relevant branch
+    # git 1.7.x
+    $ git fetch origin ptc_master  # fetches relevant branch
     $ git co ptc_master
 
 ### install `Test::Smoke`
