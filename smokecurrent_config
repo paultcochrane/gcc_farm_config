@@ -38,8 +38,7 @@ $conf = {
           'un_file' => '/home/ptc/p5smoke/smoke/smokecurrent.usernote',
           'un_position' => 'bottom',
           'delay_report' => '',
-          'curlbin' => '/usr/bin/curl',
           'patch_type' => 'multi',
-          'poster' => 'curl',
+          'poster' => 'HTTP::Tiny',
           'skip_tests' => '/home/ptc/p5smoke/smoke/smokecurrent.skiptests'
         };
