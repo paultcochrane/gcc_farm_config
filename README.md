@@ -76,12 +76,7 @@ of this repository.  The list of branches is currently as follows:
 
     $ cd $HOME/p5smoke/gcc_farm_config
     $ git co -b gcc<nnn>
-    $ for file in perlcurrent.cfg perlcurrent.cfg.bak smokecurrent_config \
-                  smokecurrent.patchup smokecurrent.sh smokecurrent.skiptests \
-                  smokecurrent.usernote
-      do
-          cp ../smoke/$file .
-      done
+    $ ./copy_config_files_to_git_branch.sh
     $ git ci -a -m "Adding configuration for gcc<nnn>"
     $ git push origin gcc<nnn>
 
