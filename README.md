@@ -30,6 +30,11 @@ of this repository.  The list of branches is currently as follows:
     $ cd $HOME
     $ \curl -L http://install.perlbrew.pl | bash
 
+### Log in again to get the new `perlbrew` goodness
+
+    $ exit
+    home-machine$ ssh gcc<nnn>
+
 ### install a recent `perl` version
 
     # e.g.
