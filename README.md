@@ -13,12 +13,17 @@ of this repository.  The list of branches is currently as follows:
     $ ssh-keygen -t rsa -b 2048
     # copy key to GitHub
 
-### clone the `dotfiles` repo and link the relevant files:
+### make a `p5smoke` directory to contain the smoke-related information for Perl5
 
-    $ git clone git@github.com:paultcochrane/dotfiles.git
-    $ ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
-    $ ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
-    $ ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc
+    $ mkdir $HOME/p5smoke
+
+### clone the `gcc_farm_config` repo and link the relevant files:
+
+    $ cd $HOME/p5smoke
+    $ git clone git@github.com:paultcochrane/gcc_farm_config.git
+    $ ln -s $HOME/p5smoke/gcc_farm_config/.gitconfig $HOME/.gitconfig
+    $ ln -sf $HOME/p5smoke/gcc_farm_config/.bashrc $HOME/.bashrc
+    $ ln -s $HOME/p5smoke/gcc_farm_config/.vimrc $HOME/.vimrc
 
 ### install `perlbrew`
 
@@ -30,10 +35,6 @@ of this repository.  The list of branches is currently as follows:
     $ perlbrew install perl-5.20.1
     ...
     $ perlbrew switch perl-5.20.1
-
-### make a `p5smoke` directory to contain the smoke-related information for Perl5
-
-    $ mkdir $HOME/p5smoke
 
 ### clone the `Test::Smoke` repo, and change into the `ptc_master` branch
 
@@ -65,11 +66,6 @@ of this repository.  The list of branches is currently as follows:
     # - use nice 10
     # - use verbose level 2
     # Remove the comment line in `smokecurrent.skiptests`
-
-### clone the `gcc_farm_config` repo
-
-    $ cd $HOME/p5smoke
-    $ git clone git@github.com:paultcochrane/gcc_farm_config.git
 
 ### make a branch for the relevant architecture/machine and check new config into branch
 
