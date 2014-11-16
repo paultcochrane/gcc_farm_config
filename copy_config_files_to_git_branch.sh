@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 FILES="perlcurrent.cfg perlcurrent.cfg.bak smokecurrent_config \
        smokecurrent.patchup smokecurrent.sh smokecurrent.skiptests \
