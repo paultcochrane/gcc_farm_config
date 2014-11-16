@@ -5,6 +5,7 @@ of this repository.  The list of branches is currently as follows:
    * gcc10
    * gcc12
    * gcc14
+   * gcc110
 
 ## Smoke testing setup
 
