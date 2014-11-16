@@ -27,7 +27,13 @@ of this repository.  The list of branches is currently as follows:
 
 ### install `perlbrew`
 
+    $ cd $HOME
     $ \curl -L http://install.perlbrew.pl | bash
+
+### Log in again to get the new `perlbrew` goodness
+
+    $ exit
+    home-machine$ ssh gcc<nnn>
 
 ### install a recent `perl` version
 
@@ -79,6 +85,18 @@ of this repository.  The list of branches is currently as follows:
       done
     $ git ci -a -m "Adding configuration for gcc<nnn>"
     $ git push origin gcc<nnn>
+
+### link the version-controlled config files back into the smoke dir
+
+Now if the files are changed in the `smoke` dir, then we can keep track of
+the changes.
+
+    $ for file in perlcurrent.cfg perlcurrent.cfg.bak smokecurrent_config \
+                  smokecurrent.patchup smokecurrent.sh smokecurrent.skiptests \
+                  smokecurrent.usernote
+      do
+          ln -sf $HOME/p5smoke/gcc_farm_config/$file $HOME/p5smoke/smoke/$file
+      done
 
 ## Running the smoker by hand
 
