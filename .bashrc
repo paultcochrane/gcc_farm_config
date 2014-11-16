@@ -58,9 +58,14 @@ fi
 
 # enable git completion
 GIT_BASH_COMPLETION="/etc/bash_completion.d/git"
+GIT_PROMPT="$HOME/.git-prompt.sh"
 if [ -e "$GIT_BASH_COMPLETION" ]
 then
     source "$GIT_BASH_COMPLETION"
+    if [ -e "$GIT_PROMPT" ]
+    then
+        source $GIT_PROMPT
+    fi
 fi
 
 export GIT_PS1_SHOWDIRTYSTATE="true"
