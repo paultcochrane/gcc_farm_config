@@ -24,7 +24,7 @@ of this repository.  The list of branches is currently as follows:
     $ git clone git@github.com:paultcochrane/gcc_farm_config.git
     $ $HOME/p5smoke/gcc_farm_config/link_dotfiles.sh
 
-### install `perlbrew`
+### install `perlbrew` (http://perlbrew.pl)
 
     $ cd $HOME
     $ \curl -L http://install.perlbrew.pl | bash
