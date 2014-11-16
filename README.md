@@ -85,12 +85,8 @@ of this repository.  The list of branches is currently as follows:
 Now if the files are changed in the `smoke` dir, then we can keep track of
 the changes.
 
-    $ for file in perlcurrent.cfg perlcurrent.cfg.bak smokecurrent_config \
-                  smokecurrent.patchup smokecurrent.sh smokecurrent.skiptests \
-                  smokecurrent.usernote
-      do
-          ln -sf $HOME/p5smoke/gcc_farm_config/$file $HOME/p5smoke/smoke/$file
-      done
+    $ cd $HOME/p5smoke/gcc_farm_config
+    $ ./link_config_files_to_smoke_dir.sh
 
 ## Running the smoker by hand
 
