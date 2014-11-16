@@ -1,7 +1,7 @@
 #! /bin/sh
 #
 # Written by configsmoke.pl v0.082
-# Sat Nov 15 22:26:06 2014
+# Sun Nov 16 22:25:07 2014
 # NOTE: Changes made in this file will be *lost*
 #       after rerunning configsmoke.pl
 #
