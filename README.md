@@ -29,7 +29,7 @@ of this repository.  The list of branches is currently as follows:
     # e.g.
     $ perlbrew install perl-5.20.1
     ...
-    $ perlbrew use perl-5.20.1
+    $ perlbrew switch perl-5.20.1
 
 ### make a `p5smoke` directory to contain the smoke-related information for Perl5
 
