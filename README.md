@@ -86,6 +86,18 @@ of this repository.  The list of branches is currently as follows:
     $ git ci -a -m "Adding configuration for gcc<nnn>"
     $ git push origin gcc<nnn>
 
+### link the version-controlled config files back into the smoke dir
+
+Now if the files are changed in the `smoke` dir, then we can keep track of
+the changes.
+
+    $ for file in perlcurrent.cfg perlcurrent.cfg.bak smokecurrent_config \
+                  smokecurrent.patchup smokecurrent.sh smokecurrent.skiptests \
+                  smokecurrent.usernote
+      do
+          ln -sf $HOME/p5smoke/gcc_farm_config/$file $HOME/p5smoke/smoke/$file
+      done
+
 ## Running the smoker by hand
 
     $ ssh gcc<nnn>
