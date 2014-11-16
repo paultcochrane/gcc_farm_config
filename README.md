@@ -22,9 +22,7 @@ of this repository.  The list of branches is currently as follows:
 
     $ cd $HOME/p5smoke
     $ git clone git@github.com:paultcochrane/gcc_farm_config.git
-    $ ln -s $HOME/p5smoke/gcc_farm_config/.gitconfig $HOME/.gitconfig
-    $ ln -sf $HOME/p5smoke/gcc_farm_config/.bashrc $HOME/.bashrc
-    $ ln -s $HOME/p5smoke/gcc_farm_config/.vimrc $HOME/.vimrc
+    $ $HOME/p5smoke/gcc_farm_config/link_dotfiles.sh
 
 ### install `perlbrew`
 
