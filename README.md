@@ -27,6 +27,7 @@ of this repository.  The list of branches is currently as follows:
 
 ### install `perlbrew`
 
+    $ cd $HOME
     $ \curl -L http://install.perlbrew.pl | bash
 
 ### install a recent `perl` version
