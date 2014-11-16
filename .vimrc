@@ -31,9 +31,6 @@ set nofoldenable
 " map the leader key to comma (copied from Gary Bernhardt's .vimrc)
 let mapleader=","
 
-" ,f => open file using command-t plugin
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -114,15 +111,6 @@ else
 
 endif " has("autocmd")
 
-let s:extfname = expand("%:e")
-if s:extfname ==? "f90"
-    let fortran_free_source=1
-    unlet! fortran_fixed_source
-else
-    let fortran_free_source=1
-    unlet! fortran_fixed_source
-endif
-
 " running make
 map <leader>m :call RunMake('')<cr>
 map <leader>M :call RunMake('clean')<cr>
@@ -134,83 +122,6 @@ function! RunMake(cleanoption)
         exec ":!make"
     endif
 endfunction
-
-" run the unit"t"ests
-map <leader>t :call RunTests()<cr>
-
-function! RunTests()
-    let js_files = split(globpath(getcwd(), 'test/test*.js'), '\n')
-    let rb_files = split(globpath(getcwd(), 'test/test*.rb'), '\n')
-
-    " run Perl tests
-    if isdirectory('t')
-        if filereadable("t/harness")
-            exec ":!perl t/harness"
-        else
-            exec ":!prove -lr t"
-        endif
-    " run Python tests
-    elseif isdirectory('tests')
-        exec ":!nosetests --rednose"
-    " run Ruby tests
-    elseif !empty(rb_files)
-        exec ":!ruby -Ilib test/test*.rb"
-    " run JavaScript tests
-    elseif !empty(js_files)
-        exec ":!./node_modules/mocha/bin/mocha --reporter list"
-    endif
-endfunction
-
-" run unit tests just for 'T'his file
-map <leader>T :call RunTestsForThisFile()<cr>
-
-function! RunTestsForThisFile()
-    let filename = expand("%:t")
-    if match(filename, 'test_.*.py$') != -1
-        exec ":!nosetests --rednose %"
-    elseif match(filename, '.*.py$') != -1
-        :echo filename
-        exec ":!nosetests --rednose tests/test_" . filename
-    else
-        :echo filename
-    endif
-endfunction
-
-" run the 'a'cceptance tests
-map <leader>a :call RunAcceptanceTests()<cr>
-
-function! RunAcceptanceTests()
-    " run Python 'behave' tests
-    if isdirectory('features/steps')
-        exec ":!behave --tags ~@wip"
-    elseif isdirectory('features/step_definitions')
-        exec ":!pherkin -l -t ~@wip"
-    else
-        echo "features/steps directory doesn't exist"
-    endif
-endfunction
-
-" remove trailing whitespace (copied from the example on www.vimcasts.org)
-function! Preserve(command)
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    execute a:command
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
-
-" use "par" as the external formatter (aptitude install par)
-if filereadable("/usr/bin/par")
-    set formatprg=par
-endif
-
-" toggle spell checking with ,s
-nmap <silent> <leader>s :set spell!<CR>
 
 " swap two words (from
 " http://www.reddit.com/r/vim/comments/2772n9/nonprogrammers_your_best_tips_tricks/)
@@ -245,13 +156,6 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
-
-" syntastic settings
-setlocal omnifunc=necoghc#omnifunc
-let g:syntastic_python_checkers = ['frosted']
-
-" map toggling tagbar window to F8
-nmap <F8> :TagbarToggle<CR>
 
 " map indent the entire file with <leader>I
 nnoremap <leader>I gg<C-V>G=
