@@ -42,6 +42,11 @@ of this repository.  The list of branches is currently as follows:
     ...
     $ perlbrew switch perl-5.20.1
 
+### install `cpanm` and required modules
+
+    $ perlbrew install-cpanm
+    $ cpanm LWP::UserAgent
+
 ### clone the `Test::Smoke` repo, and change into the `ptc_master` branch
 
     $ cd $HOME/p5smoke
