@@ -6,6 +6,7 @@ of this repository.  The list of branches is currently as follows:
    * gcc12
    * gcc14
    * gcc110
+   * gcc112
 
 ## Smoke testing setup
 
@@ -40,6 +41,11 @@ of this repository.  The list of branches is currently as follows:
     $ perlbrew install perl-5.20.1
     ...
     $ perlbrew switch perl-5.20.1
+
+### install `cpanm` and required modules
+
+    $ perlbrew install-cpanm
+    $ cpanm LWP::UserAgent
 
 ### clone the `Test::Smoke` repo, and change into the `ptc_master` branch
 
