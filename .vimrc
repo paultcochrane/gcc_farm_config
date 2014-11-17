@@ -31,9 +31,12 @@ set nofoldenable
 " map the leader key to comma (copied from Gary Bernhardt's .vimrc)
 let mapleader=","
 
+<<<<<<< HEAD:.vimrc
 " ,f => open file using command-t plugin
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 
+=======
+>>>>>>> master:.vimrc
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -114,6 +117,7 @@ else
 
 endif " has("autocmd")
 
+<<<<<<< HEAD:.vimrc
 let s:extfname = expand("%:e")
 if s:extfname ==? "f90"
     let fortran_free_source=1
@@ -123,6 +127,8 @@ else
     unlet! fortran_fixed_source
 endif
 
+=======
+>>>>>>> master:.vimrc
 " running make
 map <leader>m :call RunMake('')<cr>
 map <leader>M :call RunMake('clean')<cr>
@@ -135,6 +141,7 @@ function! RunMake(cleanoption)
     endif
 endfunction
 
+<<<<<<< HEAD:.vimrc
 " run the unit"t"ests
 map <leader>t :call RunTests()<cr>
 
@@ -212,6 +219,8 @@ endif
 " toggle spell checking with ,s
 nmap <silent> <leader>s :set spell!<CR>
 
+=======
+>>>>>>> master:.vimrc
 " swap two words (from
 " http://www.reddit.com/r/vim/comments/2772n9/nonprogrammers_your_best_tips_tricks/)
 nnoremap <leader>xp dawwP
@@ -246,6 +255,7 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
+<<<<<<< HEAD:.vimrc
 " syntastic settings
 setlocal omnifunc=necoghc#omnifunc
 let g:syntastic_python_checkers = ['frosted']
@@ -253,6 +263,8 @@ let g:syntastic_python_checkers = ['frosted']
 " map toggling tagbar window to F8
 nmap <F8> :TagbarToggle<CR>
 
+=======
+>>>>>>> master:.vimrc
 " map indent the entire file with <leader>I
 nnoremap <leader>I gg<C-V>G=
 

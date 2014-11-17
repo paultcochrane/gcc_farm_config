@@ -58,9 +58,14 @@ fi
 
 # enable git completion
 GIT_BASH_COMPLETION="/etc/bash_completion.d/git"
+GIT_PROMPT="$HOME/.git-prompt.sh"
 if [ -e "$GIT_BASH_COMPLETION" ]
 then
     source "$GIT_BASH_COMPLETION"
+    if [ -e "$GIT_PROMPT" ]
+    then
+        source $GIT_PROMPT
+    fi
 fi
 
 export GIT_PS1_SHOWDIRTYSTATE="true"
@@ -123,19 +128,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -e /opt/intel/composerxe/bin/compilervars.sh ]
-then
-    source /opt/intel/composerxe/bin/compilervars.sh intel64
-fi
-
 export VISUAL=vim
 
 if [ -e $HOME/perl5/perlbrew/etc/bashrc ]
 then
     source $HOME/perl5/perlbrew/etc/bashrc
-fi
-
-if [ -e /opt/intel/bin/compilervars.sh ]
-then
-    source /opt/intel/bin/compilervars.sh intel64
 fi
